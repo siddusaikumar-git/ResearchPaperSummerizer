@@ -1,0 +1,119 @@
+.content {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr, 1fr, auto, 1fr, 1fr;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.row_name {
+  justify-self: flex-end;
+  font-weight: bold;
+}
+
+.title,
+.abstractContent {
+  justify-self: flex-start;
+}
+
+.image img {
+  width: 10rem;
+}
+
+.text {
+  --max-lines: 3;
+  --line-height: 1.2;
+  max-height: calc(var(--max-lines) * 1em * var(--line-height));
+  line-height: var(--line-height);
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+}
+
+.summary {
+  padding-left: 1rem;
+}
+
+.text:has(+ .expand_btn:not(:checked))::before {
+  content: "";
+  position: absolute;
+  height: calc(2em * var(--line-height));
+  width: 100%;
+  bottom: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, white);
+}
+.textContent {
+  position: relative;
+}
+
+.expand_btn {
+  position: absolute;
+  appearance: none;
+  bottom: -20px;
+  right: -10px;
+  cursor: pointer;
+}
+
+.expand_btn::before {
+  content: "...";
+  font-style: bold;
+  font-size: 175%;
+}
+
+.expand_btn:checked::before {
+  content: "Collapse";
+  border: 1px solid black;
+  padding: 0.25rem;
+  border-radius: 0.25em;
+  cursor: pointer;
+  font-style: normal;
+  font-size: 100%;
+}
+
+.expand_btn:hover {
+  background-color: #ccc;
+}
+
+.text:has(+ .expand_btn:checked) {
+  max-height: none;
+}
+
+.list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.button {
+  font: inherit;
+  cursor: pointer;
+  color: #1c507b;
+  border: 1px solid #1c507b;
+  background-color: transparent;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+}
+
+.button:hover,
+.button:active {
+  background-color: #e6f1f9;
+}
+
+.keywordAction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pdf_link {
+  grid-column: 2 / 3;
+  justify-self: flex-end;
+}
+
+.abstract ul {
+  list-style: outside;
+}

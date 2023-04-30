@@ -1,0 +1,54 @@
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.button {
+  font: inherit;
+  cursor: pointer;
+  color: #1c507b;
+  border: 1px solid #1c507b;
+  background-color: transparent;
+  padding: 0.3rem 1.5rem;
+  border-radius: 4px;
+  grid-column: 1 / 3;
+  justify-self: center;
+}
+
+.button:hover,
+.button:active {
+  background-color: #e6f1f9;
+}
+
+.input {
+  border: 1px solid #1c507b;
+  border-radius: 4px;
+  height: 3rem;
+  width: 30rem;
+  padding: 1rem;
+}
+
+.input::placeholder {
+  text-align: center;
+}
+
+.invalid {
+  border: 1px solid #1c507b;
+  background-color: #e6f1f9;
+}
+.label {
+  padding-left: 8%;
+}
+
+.error_text {
+  color: #b40e0e;
+  font-size: small;
+}
+
+.spinner {
+  padding-left: 45%;
+}

@@ -1,0 +1,56 @@
+.header {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: #77002e; */
+  background: linear-gradient(180deg, #3e7cae 30%, rgb(80, 108, 125));
+  padding: 0 5%;
+  top: 0;
+  position: fixed;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+  font-size: large;
+}
+
+.button {
+  background: none;
+  color: rgb(225, 225, 225);
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:active {
+  color: white;
+}
+
+.header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: baseline;
+}
+
+.header li {
+  margin-left: 3rem;
+}
+
+.header a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: rgb(225, 225, 225);
+}
+
+.header a:hover,
+.header a:active {
+  color: white;
+}
