@@ -8,7 +8,7 @@ openai.api_key  = os.getenv('OPENAI_API_KEY')
 
 
 
-def get_completion(prompt, model="gpt-3.5-turbo"):
+def get_text_completion(prompt, model="gpt-3.5-turbo"):
     messages = [{"role": "user", "content": prompt}]
     response = openai.ChatCompletion.create(
         model=model,
@@ -18,3 +18,9 @@ def get_completion(prompt, model="gpt-3.5-turbo"):
     return response.choices[0].message["content"]
 
 
+def get_image_generation(prompt):
+    return openai.Image.create(
+    prompt=prompt,
+    n=1,
+    size="1024x1024"
+    )

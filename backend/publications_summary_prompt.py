@@ -1,6 +1,7 @@
-from prompt_api import get_completion
+from prompt_api import get_text_completion, get_image_generation
 
-def prompt_input(research_paper_title):
+
+def text_prompt_input(research_paper_title):
 
     prompt = f"""
     Your task is to summarize the research paper and provide the requested details.
@@ -17,5 +18,8 @@ def prompt_input(research_paper_title):
 
     Technical specifications: ```{research_paper_title}```
     """
-    response = get_completion(prompt)
+    response = get_text_completion(prompt)
     return response
+
+def image_prompt_input(prompt):
+    return get_image_generation(prompt)
